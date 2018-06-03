@@ -22,6 +22,8 @@ public class EnderecoServiceImpl implements EnderecoService {
 
 	@Override
 	public Endereco save(Endereco endereco) {
+		System.out.println("Endereco");
+		System.out.println(endereco);
 
 		endereco = this.enderecoRepository.save(endereco);
 

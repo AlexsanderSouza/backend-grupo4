@@ -20,5 +20,6 @@ public class Pessoa extends AbstractEntity {
 	private String nome;
 
 	@Column
-	private String sobrenome;
+	private String email;
+	
 }

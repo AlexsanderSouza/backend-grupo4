@@ -3,8 +3,8 @@ server:
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/exemplo_endereco_bd?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
-    username: aluno
-    password: 123
+    username: root
+    password: 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate:
