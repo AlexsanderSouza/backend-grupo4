@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.aula.core.model.entity.Endereco;
+import com.example.aula.core.model.entity.Alocacao;
 
 import reactor.core.publisher.Mono;
 
-@RequestMapping("/endereco")
-public interface EnderecoController {
+@RequestMapping("/alocacao")
+public interface AlocacaoController {
 
-	@GetMapping("/enderecos-by-pessoa/{idPessoa}")
-	Mono<List<Endereco>> getEnderecosDaPessoa(@PathVariable Long idPessoa);
+	@GetMapping("/pessoa-by-tarefa/{idTarefa}")
+	Mono<List<Alocacao>> getTarefaDaPessoa(@PathVariable Long idTarefa);
 
 	@PostMapping("/save")
-	Mono<Endereco> saveEndereco(@RequestBody Endereco endereco);
+	Mono<Alocacao> saveAlocacao(@RequestBody Alocacao alocacao);
 
 }

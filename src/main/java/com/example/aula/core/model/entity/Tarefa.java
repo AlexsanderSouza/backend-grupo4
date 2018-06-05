@@ -1,5 +1,7 @@
 package com.example.aula.core.model.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -10,18 +12,29 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+
+
 @Entity
-@Table(name="pessoa")
+@Table(name="tarefa")
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Pessoa extends AbstractEntity {
-	@Column
-	private String nome;
+public class Tarefa extends AbstractEntity {
 
 	@Column
-	private String email;
+	private String titulo;
+
+	@Column
+	private String descricao;
+	
+	@Column
+	private LocalDate inicioDate;
+	
+	@Column
+	private LocalDate fimDate;
+	
 	
 }
+

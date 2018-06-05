@@ -17,11 +17,29 @@ public class PessoaServiceImpl implements PessoaService {
 
 	@Override
 	public List<Pessoa> getAll() {
+		System.out.println("tudo");
+		System.out.println(this.pessoaRepository.findAll());
 		return this.pessoaRepository.findAll();
 	}
 
 	@Override
 	public Pessoa save(Pessoa pessoa) {
+
+		pessoa = this.pessoaRepository.save(pessoa);
+
+		return pessoa;
+	}
+	
+	@Override
+	public void delete(Long pessoaID) {
+
+		 this.pessoaRepository.deleteById(pessoaID);
+
+//		return pessoa;  //tanto faz
+	}
+	
+	@Override
+	public Pessoa edit(Pessoa pessoa) {
 
 		pessoa = this.pessoaRepository.save(pessoa);
 

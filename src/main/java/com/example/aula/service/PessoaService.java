@@ -8,4 +8,8 @@ public interface PessoaService {
 	public List<Pessoa> getAll();
 
 	public Pessoa save(Pessoa pessoa);
+	
+	public void delete(Long pessoaID);
+	
+	public Pessoa edit(Pessoa pessoa);
 }

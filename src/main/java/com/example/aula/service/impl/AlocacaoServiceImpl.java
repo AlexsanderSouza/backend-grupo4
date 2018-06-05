@@ -5,23 +5,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.aula.core.model.entity.Endereco;
-import com.example.aula.core.model.repository.EnderecoRepository;
-import com.example.aula.service.EnderecoService;
+import com.example.aula.core.model.entity.Alocacao;
+import com.example.aula.core.model.repository.AlocacaoRepository;
+import com.example.aula.service.AlocacaoService;
 
 @Service
-public class EnderecoServiceImpl implements EnderecoService {
+public class AlocacaoServiceImpl implements AlocacaoService {
 
 	@Autowired
-	EnderecoRepository enderecoRepository;
+	AlocacaoRepository enderecoRepository;
 
 	@Override
-	public List<Endereco> findByPessoaId(Long idPessoa) {
+	public List<Alocacao> findByTarefaId(Long idPessoa) {
 		return this.enderecoRepository.findByPessoaId(idPessoa);
 	}
 
 	@Override
-	public Endereco save(Endereco endereco) {
+	public Alocacao save(Alocacao endereco) {
 		System.out.println("Endereco");
 		System.out.println(endereco);
 

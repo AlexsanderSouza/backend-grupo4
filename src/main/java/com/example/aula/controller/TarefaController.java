@@ -10,24 +10,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.aula.core.model.entity.Pessoa;
+import com.example.aula.core.model.entity.Tarefa;
 
 import reactor.core.publisher.Mono;
 
-@RequestMapping("/pessoa")
-public interface PessoaController {
+@RequestMapping("/tarefa")
+public interface TarefaController {
 
 	@GetMapping("/all")
-	Mono<List<Pessoa>> getPessoas();
+	Mono<List<Tarefa>> getTarefas();
 
 	@PostMapping("/save")
-	Mono<Pessoa> savePessoa(@RequestBody Pessoa pessoa);
+	Mono<Tarefa> saveTarefa(@RequestBody Tarefa tarefa);
 	
 	@DeleteMapping("/delete")
-	void deletePessoa(@RequestParam("params") Long pessoa);
+	void deleteTarefa(@RequestParam("params") Long tarefa);
 	
 	@PutMapping("/edit")
-	Mono<Pessoa> editPessoa(@RequestBody Pessoa pessoa);
+	Mono<Tarefa> editTarefa(@RequestBody Tarefa tarefa);
 
 
 }
+
+
