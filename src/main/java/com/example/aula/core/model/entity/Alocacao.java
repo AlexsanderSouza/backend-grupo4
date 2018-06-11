@@ -23,12 +23,12 @@ public class Alocacao extends AbstractEntity {
 	
 	
 	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name = "tarefa_id")
+	@JoinColumn(name = "tarefa_id", referencedColumnName="id")
 	@NotNull
 	private Tarefa tarefa;
 
 	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name = "pessoa_id")
+	@JoinColumn(name = "pessoa_id", referencedColumnName="id")
 	@NotNull
 	private Pessoa pessoa;
 }

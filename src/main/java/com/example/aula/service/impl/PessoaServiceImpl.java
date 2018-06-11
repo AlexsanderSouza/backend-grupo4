@@ -17,8 +17,6 @@ public class PessoaServiceImpl implements PessoaService {
 
 	@Override
 	public List<Pessoa> getAll() {
-		System.out.println("tudo");
-		System.out.println(this.pessoaRepository.findAll());
 		return this.pessoaRepository.findAll();
 	}
 
@@ -35,7 +33,6 @@ public class PessoaServiceImpl implements PessoaService {
 
 		 this.pessoaRepository.deleteById(pessoaID);
 
-//		return pessoa;  //tanto faz
 	}
 	
 	@Override

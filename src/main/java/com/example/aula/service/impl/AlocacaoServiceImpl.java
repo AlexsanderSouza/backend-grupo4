@@ -13,21 +13,30 @@ import com.example.aula.service.AlocacaoService;
 public class AlocacaoServiceImpl implements AlocacaoService {
 
 	@Autowired
-	AlocacaoRepository enderecoRepository;
+	AlocacaoRepository alocacaoRepository;
 
 	@Override
-	public List<Alocacao> findByTarefaId(Long idPessoa) {
-		return this.enderecoRepository.findByPessoaId(idPessoa);
+	public List<Alocacao> findByTarefaId(Long idTarefa) {
+		return this.alocacaoRepository.findByTarefaId(idTarefa);
 	}
 
 	@Override
-	public Alocacao save(Alocacao endereco) {
-		System.out.println("Endereco");
-		System.out.println(endereco);
+	public Alocacao save(Alocacao alocacao) {
 
-		endereco = this.enderecoRepository.save(endereco);
+		alocacao = this.alocacaoRepository.save(alocacao);
 
-		return endereco;
+		return alocacao;
+	}
+
+	@Override
+	public List<Alocacao> findByPessoaId(Long idPessoa) {
+		System.out.println(this.alocacaoRepository.findByPessoaId(idPessoa));
+		return this.alocacaoRepository.findByPessoaId(idPessoa);
+	}
+
+	@Override
+	public void delete(Long id) {
+		this.alocacaoRepository.deleteById(id);
 	}
 
 }

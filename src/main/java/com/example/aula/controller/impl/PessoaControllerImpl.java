@@ -22,8 +22,6 @@ public class PessoaControllerImpl implements PessoaController {
 	@Override
 	public Mono<List<Pessoa>> getPessoas() {
 		List<Pessoa> listaAlunos = this.pessoaService.getAll();
-		System.out.println("lista");
-		System.out.println(listaAlunos);
 		return Mono.just(listaAlunos);
 	}
 
@@ -36,10 +34,7 @@ public class PessoaControllerImpl implements PessoaController {
 	
 	@Override
 	public void deletePessoa(@RequestParam("params") Long pessoaID) {
-		System.out.println(pessoaID);
 		this.pessoaService.delete(pessoaID);
-
-//		return Mono.just(pessoa);
 	}
 	
 	@Override
