@@ -14,7 +14,8 @@ public class SpringAulaApplication {
 		return new WebFluxConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("POST", "DELETE", "PUT", "GET");
+				registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("POST", "DELETE",
+						"PUT", "GET");
 			}
 		};
 	}

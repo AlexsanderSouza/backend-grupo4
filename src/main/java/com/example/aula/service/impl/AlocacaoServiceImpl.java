@@ -30,7 +30,6 @@ public class AlocacaoServiceImpl implements AlocacaoService {
 
 	@Override
 	public List<Alocacao> findByPessoaId(Long idPessoa) {
-		System.out.println(this.alocacaoRepository.findByPessoaId(idPessoa));
 		return this.alocacaoRepository.findByPessoaId(idPessoa);
 	}
 

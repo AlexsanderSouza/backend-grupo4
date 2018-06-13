@@ -30,10 +30,10 @@ public class Tarefa extends AbstractEntity {
 	private String descricao;
 	
 	@Column
-	private LocalDate inicioDate;
+	private LocalDate dtIni;
 	
 	@Column
-	private LocalDate fimDate;
+	private LocalDate dtFim;
 	
 	
 }

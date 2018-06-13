@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.aula.core.model.entity.Alocacao;
 import com.example.aula.core.model.entity.Tarefa;
+import com.example.aula.core.model.repository.AlocacaoRepository;
 import com.example.aula.core.model.repository.TarefaRepository;
 import com.example.aula.service.TarefaService;
 
@@ -14,6 +16,9 @@ public class TarefaServiceImpl implements TarefaService {
 
 	@Autowired
 	TarefaRepository tarefaRepository;
+	
+	@Autowired
+	AlocacaoRepository alocacaoRepository;
 
 	@Override
 	public List<Tarefa> getAll() {
@@ -32,8 +37,9 @@ public class TarefaServiceImpl implements TarefaService {
 	
 	@Override
 	public void delete(Long tarefaID) {
-
-		 this.tarefaRepository.deleteById(tarefaID);
+		List<Alocacao> alocacao = alocacaoRepository.findByTarefaId(tarefaID);
+		this.alocacaoRepository.deleteAll(alocacao);
+		this.tarefaRepository.deleteById(tarefaID);
 	}
 	
 	@Override
