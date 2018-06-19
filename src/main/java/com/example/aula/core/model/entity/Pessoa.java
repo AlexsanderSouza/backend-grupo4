@@ -20,9 +20,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Pessoa extends AbstractEntity {
+	/** cria coluna nome na tabela pessoa */
 	@Column()
 	private String nome;
 
+	/** cria coluna email na tabela pessoa */
 	@Column
 	private String email;
 	

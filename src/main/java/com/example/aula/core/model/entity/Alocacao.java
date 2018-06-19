@@ -22,12 +22,13 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Alocacao extends AbstractEntity {
 	
-	
+	/** cria coluna tarefa_id e coloca como chave estrangeira da tarefa */
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name = "tarefa_id", referencedColumnName="id")
 	@NotNull
 	private Tarefa tarefa;
 
+	/** cria coluna pessoa_id e coloca como chave estrangeira da pessoa */
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name = "pessoa_id", referencedColumnName="id")
 	@NotNull

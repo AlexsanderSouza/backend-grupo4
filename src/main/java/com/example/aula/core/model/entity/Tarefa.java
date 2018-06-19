@@ -22,15 +22,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Tarefa extends AbstractEntity {
-
+	/** cria coluna titulo na tabela tarefa */
 	@Column
 	private String titulo;
-
+	
+	/** cria coluna escrição na tabela tarefa */
 	@Column
 	private String descricao;
 	
+	/** cria coluna dtIni na tabela tarefa */
 	@Column
 	private LocalDate dtIni;
+	/** cria coluna dtFim na tabela tarefa */
 	
 	@Column
 	private LocalDate dtFim;

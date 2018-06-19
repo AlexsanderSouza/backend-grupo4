@@ -17,15 +17,19 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/tarefa")
 public interface TarefaController {
 
+	/** retorna lista de tarefas do banco */
 	@GetMapping("/all")
 	Mono<List<Tarefa>> getTarefas();
-
+	
+	/** Salva tarefa no banco */
 	@PostMapping("/save")
 	Mono<Tarefa> saveTarefa(@RequestBody Tarefa tarefa);
 	
+	/** deleta tarefa no banco */
 	@DeleteMapping("/delete")
 	void deleteTarefa(@RequestParam("params") Long tarefa);
 	
+	/** edita tarefa no banco */
 	@PutMapping("/edit")
 	Mono<Tarefa> editTarefa(@RequestBody Tarefa tarefa);
 

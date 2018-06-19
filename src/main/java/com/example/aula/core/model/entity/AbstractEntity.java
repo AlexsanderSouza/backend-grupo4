@@ -15,6 +15,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Wither;
 
+/** classe que gera um id */
 @Component
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass

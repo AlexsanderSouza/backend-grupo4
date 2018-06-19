@@ -17,15 +17,19 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/alocacao")
 public interface AlocacaoController {
 
+	/** retorna lista de alocação que contém  id de pessoa passado na url */
 	@GetMapping("/pessoa-by-tarefa/{idPessoa}")
 	Mono<List<Alocacao>> getTarefaDaPessoa(@PathVariable Long idPessoa);
 	
+	/** retorna lista de alocação que contém id de tarefa passado na url */
 	@GetMapping("/tarefa-by-pessoa/{idTarefa}")
 	Mono<List<Alocacao>> getPessoaDaTarefa(@PathVariable Long idTarefa);
-
+	
+	/** salva a alocação recebida no banco */
 	@PostMapping("/save")
 	Mono<Alocacao> saveAlocacao(@RequestBody Alocacao alocacao);
 	
+	/** deleta a alocação recebida, do banco */
 	@DeleteMapping("/delete")
 	void deleteAlocacao(@RequestParam("params") Long id);
 
